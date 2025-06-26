@@ -27,7 +27,7 @@ public class PokemonDAO
             PreparedStatement pst = con.prepareStatement(query);
             pst.setString(1,pokemon.getNombre());
             pst.setString(2,pokemon.getTipo());
-            pst.setDouble(3,pokemon.getPeso());
+            pst.setDouble(3,pokemon.getPeso()); // peso is double
             pst.setInt(4,pokemon.getAltura());
             pst.setString(5,pokemon.getDescripcion());
             pst.setInt(6,pokemon.getAtk());
@@ -92,7 +92,7 @@ public class PokemonDAO
             PreparedStatement pst = con.prepareStatement(query);
             pst.setString(1,pokemon.getNombre());
             pst.setString(2,pokemon.getTipo());
-            pst.setInt(3,pokemon.getPeso());
+            pst.setDouble(3,pokemon.getPeso()); // Changed to setDouble
             pst.setInt(4,pokemon.getAltura());
             pst.setString(5,pokemon.getDescripcion());
             pst.setInt(6,pokemon.getAtk());

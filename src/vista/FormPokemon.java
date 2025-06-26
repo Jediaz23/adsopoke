@@ -45,12 +45,12 @@ public class FormPokemon {
 
                 String nombre = textField2.getText();
                 String tipo = textField3.getText();
-                int peso = Integer.parseInt(textField4.getText());
+                double peso = Double.parseDouble(textField4.getText()); // Changed to double
                 int altura = Integer.parseInt(textField6.getText());
                 String descripcion = textArea1.getText();
                 int apk = Integer.parseInt(textField7.getText());
                 int def = Integer.parseInt(textField8.getText());
-                String foto = textField6.getText();
+                String foto = textField9.getText(); // Corrected to textField9 for foto
 
                 Pokemon pokemon = new Pokemon(0,nombre, tipo, peso,altura,descripcion,apk,def,foto);
                 pokemonDAO.agregar(pokemon);
@@ -64,7 +64,7 @@ public class FormPokemon {
             public void actionPerformed(ActionEvent e) {
                 String nombre = textField2.getText();
                 String tipo = textField3.getText();
-                int peso = Integer.parseInt(textField4.getText());
+                double peso = Double.parseDouble(textField4.getText()); // Changed to double
                 int altura = Integer.parseInt(textField6.getText());
                 String descripcion = textArea1.getText();
                 int apk = Integer.parseInt(textField7.getText());
