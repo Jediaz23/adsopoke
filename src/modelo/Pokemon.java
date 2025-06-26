@@ -5,7 +5,7 @@ public class Pokemon
     int id_pokedex;
     String nombre;
     String tipo;
-    int peso;
+    double peso; // Changed to double
     int altura;
     String descripcion;
     int atk;
@@ -13,7 +13,7 @@ public class Pokemon
     String foto;
 
 
-    public Pokemon(int id_pokedex, String nombre, String tipo, int peso, int altura, String descripcion, int atk, int def, String foto) {
+    public Pokemon(int id_pokedex, String nombre, String tipo, double peso, int altura, String descripcion, int atk, int def, String foto) { // Changed peso to double
         this.id_pokedex = id_pokedex;
         this.nombre = nombre;
         this.tipo = tipo;
@@ -49,11 +49,11 @@ public class Pokemon
         this.tipo = tipo;
     }
 
-    public int getPeso() {
+    public double getPeso() { // Changed to double
         return peso;
     }
 
-    public void setPeso(int peso) {
+    public void setPeso(double peso) { // Changed to double
         this.peso = peso;
     }
 

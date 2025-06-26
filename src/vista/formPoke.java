@@ -33,12 +33,12 @@ public class formPoke {
     private JButton SALIRButton;
     private JProgressBar progressBar1;
     private JProgressBar progressBar2;
-    private JTextField textField1;
-    private JTextField textField2;
 
     private int vidaPokemon1 = 0;
+    private int maxVidaPokemon1 = 0;
     private int ataquePokemon1 = 0;
     private int vidaPokemon2 = 0;
+    private int maxVidaPokemon2 = 0;
     private int ataquePokemon2 = 0;
     int count1 = 0;
     int count2 = 0;
@@ -55,6 +55,16 @@ public class formPoke {
     public formPoke() {
         obtener_api();
         obtener_api2();
+
+        // Inicializar ProgressBars
+        progressBar1.setMaximum(maxVidaPokemon1);
+        progressBar1.setValue(vidaPokemon1);
+        progressBar1.setStringPainted(true);
+
+        progressBar2.setMaximum(maxVidaPokemon2);
+        progressBar2.setValue(vidaPokemon2);
+        progressBar2.setStringPainted(true);
+
 
         jugador1Nombre = JOptionPane.showInputDialog(null, "Ingrese nombre del Jugador 1:");
         if (jugador1Nombre == null || jugador1Nombre.trim().isEmpty()) {
@@ -144,14 +154,12 @@ public class formPoke {
                 vida1.setText(String.valueOf(hp));
                 ataque1.setText(String.valueOf(attack));
                 vidaPokemon1 = hp;
+                maxVidaPokemon1 = hp; // Guardar vida máxima
                 ataquePokemon1 = attack;
 
-
-
-
-
-
-
+                // Actualizar ProgressBar 1
+                progressBar1.setMaximum(maxVidaPokemon1);
+                progressBar1.setValue(vidaPokemon1);
 
 
                 String imagenUrl = json.getJSONObject("sprites").getString("front_shiny");
@@ -223,7 +231,12 @@ public class formPoke {
                 vida2.setText(String.valueOf(hp));
                 ataque2.setText(String.valueOf(attack));
                 vidaPokemon2 = hp;
+                maxVidaPokemon2 = hp; // Guardar vida máxima
                 ataquePokemon2 = attack;
+
+                // Actualizar ProgressBar 2
+                progressBar2.setMaximum(maxVidaPokemon2);
+                progressBar2.setValue(vidaPokemon2);
 
 
                 String imagenUrl = json.getJSONObject("sprites").getString("front_default");
@@ -311,6 +324,10 @@ public class formPoke {
 
             vida1.setText(String.valueOf(vidaPokemon1));
             vida2.setText(String.valueOf(vidaPokemon2));
+
+            // Actualizar ProgressBars
+            progressBar1.setValue(vidaPokemon1);
+            progressBar2.setValue(vidaPokemon2);
     }
 
 
