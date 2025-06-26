@@ -31,6 +31,10 @@ public class formPoke {
     private JLabel ganadas1;
     private JLabel ganadas2;
     private JButton SALIRButton;
+    private JProgressBar progressBar1;
+    private JProgressBar progressBar2;
+    private JTextField textField1;
+    private JTextField textField2;
 
     private int vidaPokemon1 = 0;
     private int ataquePokemon1 = 0;
